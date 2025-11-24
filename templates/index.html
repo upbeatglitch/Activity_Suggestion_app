@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upbeat's Activity Suggestion App</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f4f4; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #007bff; }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        input[type="text"] { padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; }
+        button { padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; transition: background-color 0.3s; }
+        button:hover { background-color: #218838; }
+        .result { margin-top: 20px; padding: 15px; border: 2px solid #007bff; border-radius: 4px; text-align: center; font-size: 1.2em; font-weight: bold; background-color: #e9f5ff; }
+        .ad-banner { margin-bottom: 25px; border: 1px solid #eee; padding: 5px; text-align: center; }
+    </style>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0299695600686963"
+      crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Upbeat's Activity Suggestion App</h1>
+
+        <div class="ad-banner">
+            <p>-- ADVERTISEMENT --</p>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-0299695600686963"
+                data-ad-slot="5288460043"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        <form method="POST">
+            <p>Input a job abbreviation (e.g., 'war', 'mnk') or a category (e.g., 'gil', 'nostalgia') for a random suggestion:</p>
+            <input type="text" name="job_abbr" placeholder="Enter Abbreviation (e.g., war)" required>
+            <button type="submit">Get Suggestion</button>
+        </form>
+
+        {% if suggestion %}
+            <div class="result">
+                <p>Your Activity Suggestion:</p>
+                {{ suggestion }}
+            </div>
+        {% endif %}
+
+        <p style="text-align: center; margin-top: 30px;">Thank you for using Upbeat's Activity Suggestion app!</p>
+    </div>
+</body>
+</html>
